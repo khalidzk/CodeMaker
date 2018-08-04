@@ -104,8 +104,8 @@ crashlytics-build.properties
 /**/.metadata/
 *.gitignore
 .gradle/
-gradle/
-gradlew
-gradlew.bat
-settings.gradle
+#gradle/
+#gradlew
+#gradlew.bat
+#settings.gradle
 
