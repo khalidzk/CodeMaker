@@ -33,7 +33,7 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="Kieran.CodeMakerPopMenuAction" class="cn.com.kieran.plugin.codemaker.action.cn.com.kieran.plugin.codemaker.action.CodeMakerPopMenuAction" text="代码生成">
+        <action id="Kieran.CodeMakerPopMenuAction" class="cn.com.kieran.plugin.codemaker.action.CodeMakerPopMenuAction" text="代码生成">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>
         </action>
     </actions>
