@@ -46,7 +46,7 @@ repositories {
 
 //3.此处是用于设置基于的intellij的版本 并且会下载源码！！
 intellij {
-    version 'IU-171.3780.107'//这个是你要下载的源码的版本,参考此处https://www.jetbrains.com/intellij-repository/releases
+    version '171.3780.107'//这个是你要下载的源码的版本,参考此处https://www.jetbrains.com/intellij-repository/releases
     pluginName 'CodeMaker'//插件的名称
     updateSinceUntilBuild false
     plugins = ["org.intellij.scala:2017.1.15"]//Bundled plugin dependencies
