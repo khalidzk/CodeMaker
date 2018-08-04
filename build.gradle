@@ -1,0 +1,61 @@
+// 1.配置仓库
+buildscript {
+    //kotlin 版本配置，不需要kotlin的可删除此处
+//    ext.kotlin_version = '1.2.0'
+    //仓库地址配置
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+        }
+
+    }
+    dependencies {
+        classpath "org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.3.0-SNAPSHOT"
+        //kotlin 配置，不需要kotlin的可删除此处
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+//2.插件 配置
+plugins {
+    id "org.jetbrains.intellij" version '0.2.17'
+}
+
+//2.1 插件配置
+// 这两个插件是必备
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+//编译java必备
+apply plugin: 'java'
+//编译kotlin必备（不需要Kotlin的可删除此处）
+//apply plugin: 'kotlin'
+
+//2.2
+//此处也必须设置用于 下载kotlin和其他库
+repositories {
+    mavenCentral()
+}
+
+//3.此处是用于设置基于的intellij的版本 并且会下载源码！！
+intellij {
+    //此处版本需要按照后面的配置一致，否则此处报错！！！！(IC-version)
+    version '173.3727.127' //这个是你要下载的源码的版本,参考此处https://www.jetbrains.com/intellij-repository/releases
+    plugins 'coverage' //Bundled plugin dependencies
+    pluginName 'CodeMaker'//插件的名称
+}
+
+//4.依赖
+dependencies {
+    //此处用于填写你所依赖的内容，比如此处依赖kotlin（不需要Kotlin的可删除此处）
+//    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+
+//配置生成的Intellij Idea 的插件相关内容
+group 'cn.com.kieran.plugin'
+//此处配置版本后，plugin.xml中的配置将失效
+version '1.0-SNAPSHOT'
+

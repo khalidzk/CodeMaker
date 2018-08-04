@@ -1,0 +1,41 @@
+<idea-plugin>
+    <!--这个需要唯一id,用于标识你的plugin（必填，且唯一）-->
+    <id>com.your.company.unique.plugin.id</id>
+    <!--这个用于显示你的plugin name（必填）-->
+    <name>CodeMaker</name>
+    <!--这个地方填写你的plugin version,gradle 配置的以build.gradle内的为准-->
+    <version>1.0</version>
+    <!--邮箱和公司地址和公司名称-->
+    <vendor email="732060461@qq.com" url="http://www.kieran.com.cn">Kieran</vendor>
+    <!--插件的内容描述-->
+    <description><![CDATA[
+      CodeMaker By Kieran『732060461@qq.com』.<br>
+    ]]></description>
+    <!--插件的更新日志-->
+    <change-notes><![CDATA[
+      初次搭建.<br>
+    ]]>
+    </change-notes>
+
+    <!--编译支持的版本，类似android的版本限制-->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="Kieran.CodeMakerPopMenuAction" class="cn.com.kieran.plugin.codemaker.action.cn.com.kieran.plugin.codemaker.action.CodeMakerPopMenuAction" text="代码生成">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CutCopyPasteGroup"/>
+        </action>
+    </actions>
+
+</idea-plugin>
