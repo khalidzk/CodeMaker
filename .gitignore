@@ -107,4 +107,5 @@ crashlytics-build.properties
 gradle/
 gradlew
 gradlew.bat
+settings.gradle
 
