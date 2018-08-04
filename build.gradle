@@ -4,6 +4,11 @@ buildscript {
 //    ext.kotlin_version = '1.2.0'
     //仓库地址配置
     repositories {
+        mavenLocal()
+        maven {
+            name 'kieran'
+            url "http://39.108.121.24:8088/repository/maven-public/"
+        }
         mavenCentral()
         maven {
             url "https://oss.sonatype.org/content/repositories/snapshots/"
@@ -11,7 +16,6 @@ buildscript {
         maven {
             url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
         }
-
     }
     dependencies {
         classpath "org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.3.0-SNAPSHOT"
@@ -42,10 +46,10 @@ repositories {
 
 //3.此处是用于设置基于的intellij的版本 并且会下载源码！！
 intellij {
-    //此处版本需要按照后面的配置一致，否则此处报错！！！！(IC-version)
-    version '173.3727.127' //这个是你要下载的源码的版本,参考此处https://www.jetbrains.com/intellij-repository/releases
-    plugins 'coverage' //Bundled plugin dependencies
+    version 'IU-171.3780.107'//这个是你要下载的源码的版本,参考此处https://www.jetbrains.com/intellij-repository/releases
     pluginName 'CodeMaker'//插件的名称
+    updateSinceUntilBuild false
+    plugins = ["org.intellij.scala:2017.1.15"]//Bundled plugin dependencies
 }
 
 //4.依赖
